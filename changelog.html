@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#131316">
+
+    <!-- Shared crawler tags. Each page adds its own title, description, and
+         og:url; og:title and og:description fall back to those on Twitter, so
+         they are not repeated per network. -->
+    <meta property="og:site_name" content="REPLAYD">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en">
+    <meta property="og:image" content="https://replayd.download/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="REPLAYD - clip your best moments, record whole sessions">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://replayd.download/og.png">
+
+    <title>REPLAYD changelog</title>
+    <meta name="description" content="What changed in each release of REPLAYD, newest first.">
+    <link rel="canonical" href="https://replayd.download/changelog.html">
+    <meta property="og:url" content="https://replayd.download/changelog.html">
+    <meta property="og:title" content="REPLAYD changelog">
+    <meta property="og:description" content="What changed in each release of REPLAYD, newest first.">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/icon-192.png" alt="REPLAYD" width="46" height="46"></a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero" style="padding-bottom:40px">
+    <h1>Changelog</h1>
+    <p class="lede">What changed, newest first.</p>
+  </div>
+
+  <div class="wrap">
+    <section>
+      <!-- Add a new .release block at the top for each version, newest first.
+
+           THIS MARKUP IS PARSED BY THE APP. Since 0.9.0, ParseNotes in
+           engine/src/core/update.cpp reads the release notes straight out of
+           this page: it finds id="<version>", takes the <li> items below it, and
+           stops at the next class="release". Three things are therefore
+           structural rather than decorative:
+
+             1. each block carries id="x.y.z"
+             2. its notes are <li> items
+             3. the next block carries class="release", which is what bounds
+                the previous one
+
+           Break any of them and the app's Updates page offers a version with no
+           description of what changed, while NOTHING reports an error -- the
+           page renders, the signature still verifies, the update is still
+           offered. It fails only inside the app. stage-release.ps1 and
+           check-release.ps1 check that the anchor exists, not that notes parse
+           out from under it.
+
+           The id is depended on from a third place as well: every published
+           manifest links to changelog.html#x.y.z, and from 0.9.1 the update
+           notification does too. Renaming an anchor strands links already out
+           in the wild.
+
+           After restyling, prove the notes still parse:
+             build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
+           It prints the notes it managed to read. An empty list is the failure
+           this comment exists to prevent. -->
+      <div class="release" id="0.9.6">
+        <h3>0.9.6</h3>
+        <p class="when">30 August 2026</p>
+        <ul>
+          <li>A Library page: everything REPLAYD has written, newest first,
+              with its size and when it was made. Double-click opens a file in
+              whatever plays it on your machine, and Delete sends it to the
+              recycle bin. Until now, finding a clip meant opening
+              Explorer.</li>
+          <li>Video was one page holding two sets of encoder settings, so
+              neither a replay nor a recording had a page of its own. It is now
+              Recordings, the replay's half has moved to Replays, and each of
+              the three pages that writes files carries the keys that write
+              them and the folder they go to.</li>
+          <li>REPLAYD can work the bitrate out for you, from what is being
+              recorded: its resolution, the frame rate and the codec. The right
+              number for 1080p60 H.264 is nothing like the right one for 4K60
+              AV1, and a fixed figure is wrong for one of them whichever it is
+              set to.</li>
+          <li>The settings that decide a bitrate now say what they will cost.
+              A replay length is not a memory cost until you know the bitrate,
+              and a bitrate is not a disk cost until you know the resolution —
+              so the page works both out and says so.</li>
+          <li>Two settings that meant something different at zero are a switch
+              and a number now: the memory ceiling, and the bitrate ceiling,
+              which has become a multiplier of the bitrate. Turning a limit off
+              no longer throws away the limit you chose.</li>
+          <li>A new installation starts on HEVC at 10 bits where the graphics
+              card can encode them, rather than on the H.264 fallback every
+              encoder manages. Codecs yours cannot encode are greyed in the
+              list instead of being offered and failing at record time.</li>
+          <li>An update found by hand now offers Download and Download and
+              install, and does what you pressed. Automatically downloading and
+              installing applies to the checks REPLAYD makes on its own, which
+              is what those settings were always about.</li>
+          <li>Fixed: the tray menu opened away from the pointer, and could come
+              up underneath an auto-hidden taskbar.</li>
+          <li>Fixed: restoring defaults ignored what your graphics card can
+              encode, and left the Profiles page with nothing to switch to.</li>
+          <li>Fixed: a setting that could not be used was drawn brighter than
+              one that could.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.9.5">
+        <h3>0.9.5</h3>
+        <p class="when">30 August 2026</p>
+        <ul>
+          <li>Updates download inside REPLAYD now, with a progress bar, and
+              offer an Install button when they are ready. The button used to
+              hand the address to your browser, which meant a second warning
+              about an unknown publisher — on a file REPLAYD had already
+              checked against a release it signed.</li>
+          <li>The tray menu is grouped: Replay, Recording, Screenshot and
+              Audio, each with its own folder to open. Starting a replay with
+              options, recording with options and the three audio switches are
+              reachable from the tray for the first time. It is drawn in
+              REPLAYD's own colours and follows the light or dark setting.</li>
+          <li>Hovering the tray icon says what is being recorded, at what
+              resolution, with which encoder, and whether your microphone is in
+              the file.</li>
+          <li>Windows notifications can be limited to when REPLAYD is in the
+              tray. With the window open it says the same things in the window
+              instead, so nothing is lost and nothing slides over the
+              application already telling you.</li>
+          <li>Microphone level is a volume slider now, where 100% is the
+              microphone as it comes in, and system audio has one of its own.
+              An existing level in decibels is converted rather than reset.</li>
+          <li>Settings pages: one field width per block, a centred column that
+              does not rearrange as you drag the window, and shorter
+              descriptions throughout. Storage's cleanup row is three rows, so
+              the folder limit lines up with everything else.</li>
+          <li>Scrolling a settings page no longer changes whatever setting the
+              pointer happens to be over.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.9.4">
+        <h3>0.9.4</h3>
+        <p class="when">29 August 2026</p>
+        <ul>
+          <li>A Changelog section on the Updates page, showing what changed in
+              the version you are running. It is there for updates that install
+              themselves: nothing gives you a moment to read what is coming
+              before it arrives, and afterwards this is the only place in
+              REPLAYD that says what did.</li>
+          <li>A settings change that cannot be saved now says why. It used to
+              report only that the file could not be written, which is equally
+              true of a full disk and of REPLAYD refusing to overwrite settings
+              a newer version wrote — and only the second is something you can
+              act on.</li>
+          <li>Update messages carry fewer numbers: "You're on the latest
+              version" and "There is a new update available", with the versions
+              left to the panel below that already lists them.</li>
+          <li>On the Updates page, the switch for automatic checks now comes
+              before the frequency it governs, and the download button reads
+              "Download update".</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.9.3">
+        <h3>0.9.3</h3>
+        <p class="when">29 August 2026</p>
+        <ul>
+          <li>A Duplicate button on each game list entry, next to Settings. The
+              copy appears directly below the original and carries its per-game
+              settings, so a second entry that should record the same way takes
+              one click and an edit to what it matches.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.9.2">
+        <h3>0.9.2</h3>
+        <p class="when">29 August 2026</p>
+        <ul>
+          <li>Messages inside REPLAYD now appear as a card in the bottom-right
+              corner, the way Windows shows its own, instead of a bar across
+              the page. Lighter, longer on screen, and with a close button.</li>
+          <li>Fixed: the Updates page showed nothing under "Latest version".
+              The text was there and unpainted, so it was invisible on screen
+              while being perfectly readable to a screen reader.</li>
+          <li>Fixed: that same panel only refreshed when the page was opened or
+              the button pressed, so a check finishing a moment later left it
+              saying nothing had been checked.</li>
+          <li>Settings that only apply while another one is on are now greyed
+              as a whole row rather than only at their switch.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.9.1">
+        <h3>0.9.1</h3>
+        <p class="when">29 August 2026</p>
+        <ul>
+          <li>Updates can download and install themselves, if you want them to.
+              Two new switches under Updates: one to fetch a new version as
+              soon as it is found, one to install it once it has. Both off
+              until you turn them on, and an installer is only kept if it
+              matches what the signed release says it should be. Installing
+              waits while a recording is in progress rather than interrupting
+              one.</li>
+          <li>Windows notifications for updates, under Notifications. You are
+              told when a version is available and what REPLAYD is doing about
+              it — never that you are up to date, which is a question nobody
+              asked. Clicking can open what changed.</li>
+          <li>A separate notification the first time REPLAYD runs after
+              updating, saying which version it now is. Clicking opens what
+              changed.</li>
+          <li>REPLAYD checks for updates within seconds of starting rather than
+              after half a minute, and tries again shortly after a check that
+              could not reach the site instead of waiting for the next one due.</li>
+          <li>Fixed: the record of which build last wrote your settings never
+              moved past the first one. Going back a version was refused based
+              on that first build rather than on the version whose settings
+              would actually be lost.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.9.0">
+        <h3>0.9.0</h3>
+        <p class="when">29 August 2026</p>
+        <ul>
+          <li>Audio can follow the application being recorded instead of the
+              whole machine. Under Audio, "Only this application" records what
+              the game plays and nothing else -- no notifications, no other
+              windows. It also leaves out voice chat, which is why it is off
+              until you turn it on, and it can be set per game. Capturing a
+              whole display ignores it: there is no one application to
+              follow.</li>
+          <li>A backup now carries your profiles and video presets. Exporting
+              writes them, importing restores them, and restoring defaults
+              clears them. They were left out of all three, so a backup
+              restored a REPLAYD that looked right and had lost every named
+              configuration.</li>
+          <li>Per-game settings can set the microphone: which device, its
+              level, and mono. The replay length and custom duration have been
+              taken off that panel.</li>
+          <li>Units now sit inside their fields, so a page of settings lines up
+              instead of ending wherever the longest unit did.</li>
+          <li>The Open log button is gone from Backup. The log is still written
+              to the REPLAYD folder in AppData.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.8.67">
+        <h3>0.8.67</h3>
+        <p class="when">29 August 2026</p>
+        <ul>
+          <li>REPLAYD can tell you when a newer version exists. There is a new
+              Updates page under Application: a switch for checking on its own,
+              how often to check, a button to check now, and the version on
+              offer with what changed in it.</li>
+          <li>A check asks this site for one small file and compares two version
+              numbers. Nothing about your machine is sent, the file has to carry
+              our signature to be believed at all, and nothing installs itself.</li>
+          <li>Older installers are kept when a new one is published, instead of
+              being replaced. Going back a version is supported, and it was not
+              much use with the older version deleted.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.8.66">
+        <h3>0.8.66</h3>
+        <p class="when">28 August 2026</p>
+        <ul>
+          <li>When a video preset is used by both Replay and Recording, changing a
+              setting in one now shows the same change in the other straight away.
+              The setting was already applied to both; only the value on screen
+              lagged behind, which made the change look ignored.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.8.65">
+        <h3>0.8.65</h3>
+        <p class="when">28 August 2026</p>
+        <ul>
+          <li>Uninstalling clears the record of which build wrote your settings, so
+              going back to an older version leaves them usable rather than
+              read-only. Every actual setting is left alone.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.8.64">
+        <h3>0.8.64</h3>
+        <p class="when">28 August 2026</p>
+        <ul>
+          <li>Settings now record which REPLAYD wrote them, and an older build
+              refuses to save over settings a newer one wrote — rather than
+              quietly dropping the ones it has never heard of.</li>
+          <li>It says so at startup, in a notification and in the log: settings
+              that silently stop saving look no different from broken ones.</li>
+          <li>The settings are still read, so going back a version costs you
+              changing them, not the settings themselves.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.8.63">
+        <h3>0.8.63</h3>
+        <p class="when">28 August 2026</p>
+        <ul>
+          <li>The key that signs releases is kept encrypted rather than sitting on
+              disk in the clear.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.8.62">
+        <h3>0.8.62</h3>
+        <p class="when">28 August 2026</p>
+        <ul>
+          <li>Build and test fixes only — nothing that changes how REPLAYD behaves.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.8.61">
+        <h3>0.8.61</h3>
+        <p class="when">28 August 2026</p>
+        <ul>
+          <li>Setup refuses to install an older build over a newer one, and says to
+              uninstall first if that is really what you want. Reinstalling the
+              same version still works as a repair.</li>
+          <li>Groundwork for signed updates: releases are signed offline and the
+              app can check a signature, though nothing looks for updates yet.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.8.60">
+        <h3>0.8.60</h3>
+        <p class="when">28 August 2026</p>
+        <ul>
+          <li>Deleting a profile deletes it for good, rather than the file coming back.</li>
+          <li>Replay can edit a preset it shares with recording.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.8.59">
+        <h3>0.8.59</h3>
+        <p class="when">28 August 2026</p>
+        <ul>
+          <li>Profiles for a whole configuration, and presets for the video settings.</li>
+          <li>One button to create them, and "Scale down to" removed.</li>
+          <li>The options window opens on its own, without the main window behind it.</li>
+          <li>Start a replay or a recording with settings chosen for that run.</li>
+          <li>Save a replay out of a recording already in progress.</li>
+          <li>Open the options window from a hotkey.</li>
+          <li>Clearer wording throughout the window.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="/icon-192.png" alt="" width="26" height="26">
+      <span>&copy; 2026 REPLAYD</span>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy</a>
+    </nav>
+
+    <!-- Placeholder destinations: the platform homepages, until the REPLAYD
+         server and account exist. Real links so they look and behave like
+         links; swap the href when there is somewhere of ours to point at. -->
+    <div class="socials">
+      <a class="social" href="https://discord.com" target="_blank" rel="noopener" aria-label="Discord" title="Discord">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.291.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.099.246.197.373.291a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.893.077.077 0 0 0-.041.106c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.211 0 2.176 1.096 2.157 2.42 0 1.333-.955 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.211 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+      </a>
+      <a class="social" href="https://x.com" target="_blank" rel="noopener" aria-label="X" title="X">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
