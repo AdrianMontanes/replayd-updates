@@ -1,7 +1,12 @@
 {
-    "version":  "0.9.6",
-    "url":  "https://replayd.download/releases/REPLAYD-0.9.6-setup.exe",
-    "sha256":  "20657bc6aa32bf18c2874ff0a910e6c18910acf11f32a71fd91764e7563a213b",
+    "version":  "0.9.7",
+    "url":  "https://replayd.download/releases/REPLAYD-0.9.7-setup.exe",
+    "sha256":  "21bbb307d9cfb92749a50939953b2e6662173a29542ffa00ecf698d159c825da",
     "released":  "2026-08-30",
-    "notes":  "https://replayd.download/changelog#0.9.6"
+    "notes":  "https://replayd.download/changelog#0.9.7",
+    "mirror":  "https://github.com/AdrianMontanes/replayd-updates/releases/download/v0.9.7/REPLAYD-0.9.7-setup.exe",
+    "notes_mirror":  "https://raw.githubusercontent.com/AdrianMontanes/replayd-updates/main/changelog.html#0.9.7",
+    "files":  "REPLAYD.exe=d886bdc90d17b657fd0ce7962c6cbe842ee6439421388e9e171eeb47d6234be8|REPLAYD GUI.exe=ab39243798b14cf958d0a71110eb539e20ae5cd130139d8e846e57c38fef9e72|libSkiaSharp.dll=7dec3ba900ab353491e6446f0083739924c6f8dd668832e2f09d38ebffdbbe1c|libHarfBuzzSharp.dll=145ade963eba427027d5e1381db5d51a0ef9e98e9fef9efbfa6074ca20da246f|av_libglesv2.dll=53191a77fe783cd757ca7767077c2a64a662e7043777a5b4ab74980d4a0b73e3",
+    "files_url":  "https://replayd.download/releases/0.9.7/",
+    "files_mirror":  "https://github.com/AdrianMontanes/replayd-updates/releases/download/v0.9.7/"
 }

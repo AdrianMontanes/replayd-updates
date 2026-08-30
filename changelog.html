@@ -77,6 +77,40 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.7">
+        <h3>0.9.7</h3>
+        <p class="when">30 August 2026</p>
+        <ul>
+          <li>REPLAYD installs for you rather than for the whole computer, in
+              your own AppData folder. This is what lets it update itself:
+              nothing can write over its own files in Program Files without
+              asking for administrator every time, and an update that raises
+              that prompt is one people put off.</li>
+          <li>An update can now replace REPLAYD's files where they are instead
+              of running the installer again. Nothing new is launched, so
+              Windows has no downloaded program to warn about, and only the
+              parts that actually changed are fetched. The installer is still
+              there for a first install, and for the times a file cannot be
+              replaced.</li>
+          <li>Your settings are no longer refused when they come from a newer
+              REPLAYD. An older build keeps every setting it does not
+              recognise and writes it back untouched, so going back a version
+              costs you the settings that version cannot show you rather than
+              the ability to change any setting at all.</li>
+          <li>Updates can also be found through a second address, on
+              completely separate hosting, for when replayd.download cannot be
+              reached. Both are checked against the same signature, so neither
+              is trusted more than the other.</li>
+          <li>Fixed: the tray menu could not be clicked, and nothing lit up
+              under the pointer. It was drawn at one scale and asked about at
+              another, so every click landed somewhere the menu was not.</li>
+          <li>Fixed: the dividing lines in the tray menu highlighted as though
+              they were things to choose.</li>
+          <li>A check in progress says "Checking for updates" with moving
+              dots, rather than sitting still and looking stuck.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.6">
         <h3>0.9.6</h3>
         <p class="when">30 August 2026</p>
