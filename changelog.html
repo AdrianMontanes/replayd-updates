@@ -77,6 +77,27 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.11">
+        <h3>0.9.11</h3>
+        <p class="when">31 August 2026</p>
+        <ul>
+          <li>Fixed: an update held back because you were recording looked like
+              one that had failed. It sat there downloaded, did not install
+              itself, and offered a button to install it by hand, with nothing
+              saying why. It now says it is waiting for the recording to
+              finish, and what installing it anyway would cost.</li>
+          <li>Fixed: "REPLAYD is already running" after an update, again. The
+              previous fix could not work yet -- it was switched on by the copy
+              being replaced, and that copy is always the older one, so it
+              would have appeared one update behind for ever. REPLAYD now
+              recognises the situation on its own.</li>
+          <li>An update that cannot be installed no longer reports itself as a
+              download that did not finish. One is REPLAYD not getting the
+              file; the other is having it and not being able to put it in
+              place.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.10">
         <h3>0.9.10</h3>
         <p class="when">31 August 2026</p>

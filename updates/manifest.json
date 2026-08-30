@@ -1,12 +1,12 @@
 {
-  "version": "0.9.10",
-  "url": "https://replayd.download/releases/REPLAYD-0.9.10-setup.exe",
-  "sha256": "f38f8eeb3f7d592eb947d401d3865d2cbe63fa1ea11d4c3abcff6f361879410b",
+  "version": "0.9.11",
+  "url": "https://replayd.download/releases/REPLAYD-0.9.11-setup.exe",
+  "sha256": "1f0059a9dcb7c27618e6f00aa65f664f1eb74522cf695733002fecbd46a95299",
   "released": "2026-08-31",
-  "notes": "https://replayd.download/changelog#0.9.10",
-  "mirror": "https://github.com/AdrianMontanes/replayd-updates/releases/download/v0.9.10/REPLAYD-0.9.10-setup.exe",
-  "notes_mirror": "https://raw.githubusercontent.com/AdrianMontanes/replayd-updates/main/changelog.html#0.9.10",
-  "files": "REPLAYD.exe=0823d7d0ef3a71c02df673284c7242034f5b5ac2b77994fa92f6da609c6ca2fd|REPLAYD GUI.exe=97b766149b5a35a85ac57a306ec4601c054da3e797e65f3ead18aaefaec32b4c|libSkiaSharp.dll=7dec3ba900ab353491e6446f0083739924c6f8dd668832e2f09d38ebffdbbe1c|libHarfBuzzSharp.dll=145ade963eba427027d5e1381db5d51a0ef9e98e9fef9efbfa6074ca20da246f|av_libglesv2.dll=53191a77fe783cd757ca7767077c2a64a662e7043777a5b4ab74980d4a0b73e3",
-  "files_url": "https://replayd.download/releases/0.9.10/",
-  "files_mirror": "https://github.com/AdrianMontanes/replayd-updates/releases/download/v0.9.10/"
+  "notes": "https://replayd.download/changelog#0.9.11",
+  "mirror": "https://github.com/AdrianMontanes/replayd-updates/releases/download/v0.9.11/REPLAYD-0.9.11-setup.exe",
+  "notes_mirror": "https://raw.githubusercontent.com/AdrianMontanes/replayd-updates/main/changelog.html#0.9.11",
+  "files": "REPLAYD.exe=a68b77dcd5101cd74e998f2aee222f7d5a15c6d9d2c8f7f1cd8931dd339c704d|REPLAYD GUI.exe=4dafe3222a6b5d21ae0c40caae70893f18e0a13287d43ca2d9c5cc9cf011b393|libSkiaSharp.dll=7dec3ba900ab353491e6446f0083739924c6f8dd668832e2f09d38ebffdbbe1c|libHarfBuzzSharp.dll=145ade963eba427027d5e1381db5d51a0ef9e98e9fef9efbfa6074ca20da246f|av_libglesv2.dll=53191a77fe783cd757ca7767077c2a64a662e7043777a5b4ab74980d4a0b73e3",
+  "files_url": "https://replayd.download/releases/0.9.11/",
+  "files_mirror": "https://github.com/AdrianMontanes/replayd-updates/releases/download/v0.9.11/"
 }
