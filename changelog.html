@@ -77,6 +77,18 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.9">
+        <h3>0.9.9</h3>
+        <p class="when">30 August 2026</p>
+        <ul>
+          <li>Fixed: after REPLAYD updated itself, Windows' list of installed
+              apps went on showing the version before the update, and would
+              have kept showing it however many updates followed. Updating
+              itself does not run the installer, and that list is something the
+              installer used to write.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.8">
         <h3>0.9.8</h3>
         <p class="when">30 August 2026</p>
