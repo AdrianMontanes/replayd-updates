@@ -77,6 +77,18 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.8">
+        <h3>0.9.8</h3>
+        <p class="when">30 August 2026</p>
+        <ul>
+          <li>Fixed: when REPLAYD could not reach the site and fell back to the
+              second address, one of the files it needed answered as missing
+              and the quiet update gave up, running the installer instead. The
+              file was there the whole time under a slightly different name,
+              which the second host had given it without saying so.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.7">
         <h3>0.9.7</h3>
         <p class="when">30 August 2026</p>
