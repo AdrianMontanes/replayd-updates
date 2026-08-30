@@ -1,0 +1,10 @@
+# Every byte here verbatim.
+#
+# The manifest is signed over its exact bytes. Git's newline conversion
+# rewrote six carriage returns out of it on the way in, so what this repository
+# served was six bytes shorter than what was signed and every install refused
+# it -- reporting the manifest as unsigned, which is what tampering looks like.
+#
+# Nothing in this repository is source. There is nothing here that wants
+# normalising, so the whole thing is exempt.
+* -text
