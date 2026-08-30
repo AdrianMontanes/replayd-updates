@@ -77,6 +77,37 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.10">
+        <h3>0.9.10</h3>
+        <p class="when">31 August 2026</p>
+        <ul>
+          <li>The library is a folder window now. Every file has a picture of
+              itself, and you pick things the way you pick them anywhere else
+              in Windows: click, Ctrl+click to add one, Shift+click to take a
+              run of them, Ctrl+A for the lot. Right-click acts on everything
+              picked, and Delete and Enter do what they do in a folder.</li>
+          <li>The pictures come from Windows itself, so they are the same ones
+              Explorer shows and REPLAYD decodes nothing to get them. A clip
+              Windows cannot make a picture of shows its file type instead,
+              which is what a folder does too.</li>
+          <li>An update only fetches what actually changed. Most releases move
+              two files and leave the rest exactly as they were, and those are
+              taken from the copy already installed instead of downloaded
+              again -- about twenty megabytes a release that no longer crosses
+              the network. What is reused is checked against the same
+              signature as anything downloaded.</li>
+          <li>Fixed: after updating, REPLAYD said it was already running. It
+              was: the copy being replaced had not quite finished closing. The
+              new one waits for it now instead of giving up.</li>
+          <li>Pages change in one step. The heading used to change first and
+              the rest a moment later, so on the longer pages you could watch
+              one being built over the top of the last.</li>
+          <li>Importing settings no longer reports settings it did not
+              recognise as skipped. It keeps them, so nothing was being
+              skipped.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.9">
         <h3>0.9.9</h3>
         <p class="when">30 August 2026</p>
