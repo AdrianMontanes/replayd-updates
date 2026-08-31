@@ -77,6 +77,42 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.12">
+        <h3>0.9.12</h3>
+        <p class="when">31 August 2026</p>
+        <ul>
+          <li>Replays and recordings are told apart even when they are kept in
+              the same folder, which is what happens by default: leave both
+              folder settings empty and everything goes to your Videos folder,
+              where a replay and a recording are both an .mp4. Both tabs were
+              listing each other's files. REPLAYD now writes down which is
+              which as it saves, so from here it is not a guess.</li>
+          <li>Files saved before that record exists are sorted by their name
+              instead, which is right for anything written under settings you
+              have not changed. Where the name settles nothing, the file is
+              shown under both rather than filed under one and quietly put in
+              the wrong place. Screenshots were never affected: an image among
+              videos sorts itself.</li>
+          <li>The library can delete permanently, from the right-click menu or
+              with Shift held. It asks first and says it cannot be undone,
+              which the ordinary delete does not need to: that one goes to the
+              recycle bin.</li>
+          <li>There is no Refresh button any more. The folder is read when you
+              open the page and whenever you come back to REPLAYD, which is
+              when it matters: save a clip, switch back, it is there. Reading a
+              folder that has not changed costs nothing and changes nothing on
+              screen.</li>
+          <li>Sorting, in a box where the folder path used to be: newest or
+              oldest, by name either way, or by size. Newest first to start
+              with. The folder path moves down beside the button that opens
+              it.</li>
+          <li>The Replays, Recordings and Screenshots selector reads as tabs
+              rather than as a row of radio dots, and "Play" is "Open" — a
+              screenshot is opened rather than played, and one word should be
+              right for everything on the page.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.11">
         <h3>0.9.11</h3>
         <p class="when">31 August 2026</p>
