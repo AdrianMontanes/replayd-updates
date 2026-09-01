@@ -77,6 +77,42 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.18">
+        <h3>0.9.18</h3>
+        <p class="when">2 September 2026</p>
+        <ul>
+          <li>REPLAYD has its own notifications: a small card in the corner
+              rather than a full Windows toast, with its own accent and a
+              sound that is over before you notice it. Windows notifications
+              are still there as an option on the Notifications page, and are
+              the one to pick if you want them kept in the Action Centre.</li>
+          <li>Home is back. It opens on the last few things you saved, with
+              thumbnails, and the sidebar now has three places rather than a
+              list of fifteen: Home, Library, and the settings under a heading
+              of their own.</li>
+          <li>Adding a game no longer means knowing what its window calls
+              itself. "Add a program..." on the game list shows what is running
+              and matches on the program, so the entry keeps working when the
+              title changes mid-match.</li>
+          <li>Screenshots can keep the brightness of an HDR display, saved as
+              JPEG XR. Off by default: a .jxr opens in the Photos app and in
+              little else.</li>
+          <li>A drive that fills up no longer costs the whole recording. It
+              used to: a recording writes its index at the end, and a file
+              without one will not open anywhere. REPLAYD now stops while
+              there is still room to finish the file, tells you it did, and
+              keeps everything up to that moment.</li>
+          <li>Fixed a crash when opening the Library from Home.</li>
+          <li>Fixed REPLAYD staying in the tray after an update, for anyone
+              who has asked it not to start there.</li>
+          <li>Recordings and screenshots that could not be finished are
+              removed instead of being left behind as files nothing can
+              open.</li>
+          <li>The window can be given a different typeface, on the Window
+              page.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.17">
         <h3>0.9.17</h3>
         <p class="when">1 September 2026</p>
@@ -675,7 +711,10 @@
 
     <nav class="footer-links" aria-label="Footer">
       <a href="/">Home</a>
+      <a href="/pricing">Pricing</a>
       <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/refunds">Refunds</a>
     </nav>
 
     <!-- Placeholder destinations: the platform homepages, until the REPLAYD
