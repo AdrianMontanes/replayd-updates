@@ -77,6 +77,41 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.17">
+        <h3>0.9.17</h3>
+        <p class="when">1 September 2026</p>
+        <ul>
+          <li>Hotkeys work on controllers, racing wheels, shifters and button
+              boxes. Hold the buttons you want and let go, the same way you
+              would press a combination -- more than one at once works, which
+              is worth having on a pad where every button already does
+              something in the game.</li>
+          <li>Every hotkey has a second field. A combination at the desk and a
+              button on a rig can both be live, so setting one up no longer
+              costs you the other.</li>
+          <li>Fixed recordings that played their audio and nothing else. When
+              the codec you picked was one your graphics card cannot encode,
+              REPLAYD quietly used another and then described the file as the
+              codec you asked for -- so nothing could play the picture. The
+              file now says what it holds, and a setting naming a codec this
+              machine cannot encode is corrected at startup rather than left
+              to fail.</li>
+          <li>What a graphics card can encode is now asked of the card REPLAYD
+              records on. On a machine with two it was asking the other one,
+              so the settings page could offer a codec that would not work or
+              grey out one that would.</li>
+          <li>Starting and stopping the buffer from the corner of the window
+              reacts at once instead of a second later, where it used to show
+              "Not recording" in red on the way.</li>
+          <li>Changing a setting from the corner now shows up on the settings
+              page behind it, including while dragging a volume.</li>
+          <li>Save replay and Save clip both show how much they write in the
+              tray menu, and Save clip has a hotkey field of its own.</li>
+          <li>Buttons on the Game list and Library pages no longer sit against
+              the bottom edge of the window.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.16">
         <h3>0.9.16</h3>
         <p class="when">1 September 2026</p>
