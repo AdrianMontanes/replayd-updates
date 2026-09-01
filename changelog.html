@@ -77,6 +77,41 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.14">
+        <h3>0.9.14</h3>
+        <p class="when">1 September 2026</p>
+        <ul>
+          <li>The corner of the sidebar now answers as well as reports.
+              Clicking the state word starts or stops the replay buffer,
+              clicking the codec cycles through the ones your machine can
+              actually encode, and clicking HDR turns it on or off. They act
+              on the replay buffer's settings, and never on a recording in
+              progress: a recording owns the pipeline until it finishes, so
+              a stray click cannot end a take.</li>
+          <li>HDR in that line says what the setting is, and turns green when
+              an HDR file really is being written. It used to say what was
+              being written, which meant it read "SDR" whenever no display
+              was in HDR mode -- so a switch that was on looked off, and
+              turning it off appeared to do nothing.</li>
+          <li>Always on top now takes effect the moment you change it.
+              Turning it on only worked after a restart, and turning it off
+              did not work at all.</li>
+          <li>The Home page is gone. Everything it said lives in the corner
+              of the sidebar, where every page can see it, and its buttons
+              were a third way to do what the hotkeys and the tray menu
+              already do. The window opens on the Library instead.</li>
+          <li>In the Library, clicking one of several selected files now
+              selects just that one, as a folder window does -- right-click
+              still acts on the whole selection. Tabs no longer flinch when
+              pressed.</li>
+          <li>The License page reads as one page: the state and the buttons
+              that change it sit together, every button is one width with its
+              label centred, and each state that needs something done has one
+              highlighted button that does it. Lifetime licenses say so
+              plainly, and there is a Check now button for when something has
+              just changed on the licensing side.</li>
+        </ul>
+      </div>
       <div class="release" id="0.9.13">
         <h3>0.9.13</h3>
         <p class="when">31 August 2026</p>
@@ -90,7 +125,7 @@
               no email, no account. The corner of the window counts the days.
               When it ends, recording stops and says so; your replays, your
               recordings and every setting stay yours and stay open.</li>
-          <li>The Licence page, under Settings, is where all of it lives: buy
+          <li>The License page, under Settings, is where all of it lives: buy
               from inside the app -- the checkout opens in your browser, and
               this device licenses itself once the payment goes through --
               or enter a key you were sent. Your license key and Device ID
