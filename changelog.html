@@ -77,6 +77,41 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.16">
+        <h3>0.9.16</h3>
+        <p class="when">1 September 2026</p>
+        <ul>
+          <li>REPLAYD now records on your graphics card rather than on
+              whichever adapter Windows calls the default. On a laptop with
+              switchable graphics that was the integrated chip, which meant
+              capturing on the wrong end of the machine and being offered its
+              encoder instead of the one on your GPU -- on some laptops
+              nothing would record at all, whatever the codec.</li>
+          <li>Older NVIDIA drivers work again. REPLAYD was asking for a newer
+              encoder interface than it needs, so a card with a perfectly good
+              encoder could be turned away with a message telling you to
+              update.</li>
+          <li>Fixed a leak that grew until REPLAYD ran out of memory. Every
+              time it looked for a hardware encoder it left one behind, which
+              went unnoticed on a machine where recording starts and mattered
+              a great deal on one where it does not: there it retried every
+              two seconds, forever. Retries now back off, and REPLAYD says
+              which graphics card it could not find an encoder on.</li>
+          <li>The corner of the window has audio meters, one for what you hear
+              and one for your microphone. The icon mutes, and the bar sets the
+              volume -- the level shown is measured on what is actually being
+              recorded, so it moves when you do.</li>
+          <li>The same corner answers as well as reports: clicking the state
+              starts or stops the replay buffer, clicking the codec cycles
+              through the ones your card can encode, and clicking HDR turns it
+              on or off. None of them will interrupt a recording in progress.</li>
+          <li>The memory figure in the corner now matches the one in Task
+              Manager. It was counting shared Windows libraries once for each
+              REPLAYD process, so it read about half again too high.</li>
+          <li>Always on top takes effect when you change it, rather than at the
+              next restart. Error messages carry a button to copy them.</li>
+        </ul>
+      </div>
       <div class="release" id="0.9.15">
         <h3>0.9.15</h3>
         <p class="when">1 September 2026</p>
