@@ -77,6 +77,110 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.20">
+        <h3>0.9.20</h3>
+        <p class="when">3 September 2026</p>
+        <ul>
+          <li>The window moves. Scrolling glides the same distance instead of
+              jumping it, pages rise into place as they open, sidebar rows
+              light rather than switch, and library thumbnails fade in as
+              Windows produces them. One switch turns all of it off, on
+              Application - General under Appearance, and off means no
+              animation rather than a quick one.</li>
+          <li>A game can set its own replay length. Fifteen seconds of a
+              shooter and three minutes of a strategy game are different
+              answers, and now they can be different settings: replay length,
+              clip length, memory, HDR and bit depth all sit beside the codec
+              and bitrate an entry could already carry. The tray menu, the
+              hotkey and Home's buttons follow whichever game is being
+              captured, so they offer to save what they would actually
+              write.</li>
+          <li>Two of the per-game settings were wrong. Ticking Maximum bitrate
+              stored one percent of the bitrate rather than the multiplier the
+              row was showing, and rolling it back asked for a hundred and
+              fifty times it. Input device was offered as a number box that
+              could never hold the name of a device, and is gone: which
+              microphone is plugged in is a fact about your desk rather than
+              about a game.</li>
+          <li>Quick settings on Home can be dragged into whatever order you
+              want them. Pick a tile up anywhere except the control it holds,
+              and the rest step aside as it passes.</li>
+          <li>Notifications and the tray menu speak Spanish as well. Everything
+              REPLAYD says is translated now, rather than only what the window
+              says.</li>
+          <li>The sidebar reports the bitrate actually being written rather
+              than the one that was asked for, so constant quality and
+              variable bitrate no longer read as the same number.</li>
+          <li>Updating in place refreshes the Start menu and taskbar icons
+              instead of leaving the old ones there until Windows next rebuilds
+              its icon cache.</li>
+          <li>The notification card is drawn a weight lighter, which reads
+              better at the size it appears at.</li>
+          <li>The typeface setting is off the Appearance page. It was a bench
+              for trying faces on while the window was being designed, and that
+              work is done; config.ini still carries it for anyone who wants a
+              different one.</li>
+        </ul>
+      </div>
+
+      <div class="release" id="0.9.19">
+        <h3>0.9.19</h3>
+        <p class="when">2 September 2026</p>
+        <ul>
+          <li>REPLAYD speaks Spanish. It follows whatever language Windows is
+              set to, and there is a Language setting on Application - General
+              if you would rather choose. Anything not translated yet stays in
+              English rather than going blank.</li>
+          <li>Home has somewhere to put things. Under the last few files there
+              is a row of settings you pick yourself -- the handful you change
+              between sessions rather than once -- and under that, buttons for
+              everything a hotkey does: start and stop the replay, save it,
+              save a clip, record, take a screenshot. Each says how long it
+              writes and why it cannot, when it cannot.</li>
+          <li>The whole of Home fits the smallest window REPLAYD opens in,
+              with files in it, so the buttons are never below the fold.</li>
+          <li>The sidebar is a tree. Settings is a place you go rather than a
+              heading you read, its pages are always listed under it, and
+              going to one lights both the page and Settings.</li>
+          <li>The window remembers where you put it a moment after you put it
+              there, rather than only when it closes. A crash, Task Manager or
+              a sign-out that does not wait no longer sends it back to the
+              middle of your main display.</li>
+          <li>The replay buffer can be held on disk instead of in memory, for
+              a buffer too long to keep in RAM. Memory is still the default
+              and still the one to use: saving from it is instant, and nothing
+              is written for footage you never ask for.</li>
+          <li>New hotkey defaults. The everyday ones are on Alt+Shift and the
+              ones that stop to ask are on Ctrl+Alt, chosen to stay out of the
+              way of ShadowPlay, Steam, Discord and Windows itself.</li>
+          <li>A recording that is interrupted -- a crash, a power cut, a
+              drive pulled out -- is repaired the next time REPLAYD starts
+              rather than left as a file nothing can open.</li>
+          <li>Copy diagnostics, on Application - General, puts the version,
+              your Windows, every GPU and what each of them can encode, and
+              the settings in use on the clipboard. It is what support will
+              ask for first.</li>
+          <li>Automatic bitrate decides its own ceiling. The rate control and
+              maximum are greyed while it is on, so there is nothing left to
+              wonder about, and the corner of the sidebar now says the bitrate
+              in Mbps rather than naming the encoder.</li>
+          <li>Video presets belong to a profile rather than being shared by
+              all of them, which is the point of a profile.</li>
+          <li>The licence lives on Application - General now, under Backup,
+              instead of on a page of its own.</li>
+          <li>Fixed a replay buffer at 4K holding half the seconds it was set
+              to. It was sized before anything had been captured, against a
+              guess of 1080p.</li>
+          <li>Fixed the audio meters moving in steps on a high refresh rate
+              display, and the microphone meter reading nothing while the
+              microphone was working.</li>
+          <li>Fixed REPLAYD reporting Windows 10 on Windows 11 in its
+              diagnostics.</li>
+          <li>The buffer's working files sit beside your replays as hidden
+              files rather than in a folder of their own.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.18">
         <h3>0.9.18</h3>
         <p class="when">2 September 2026</p>
