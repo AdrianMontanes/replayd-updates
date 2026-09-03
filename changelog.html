@@ -43,7 +43,7 @@
       <a href="/pricing">Pricing</a>
       <a href="/changelog">Changelog</a>
     </nav>
-    <a class="btn small" href="/releases/REPLAYD-0.9.26-setup.exe">
+    <a class="btn small" href="/releases/REPLAYD-0.9.27-setup.exe">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M0 3.45 9.75 2.1v9.45H0zm10.95-1.5L24 0v11.55H10.95zM0 12.45h9.75v9.45L0 20.55zm10.95 0H24V24l-13.05-1.8z"/></svg>
       Download
     </a>
@@ -97,6 +97,25 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.27">
+        <h3>0.9.27</h3>
+        <p class="when">4 September 2026</p>
+        <ul>
+          <li>Hovering REPLAYD on the taskbar gives you five controls under the
+              preview: stop or start the replay buffer, save the replay, save a
+              clip, start or stop a recording, and take a screenshot. They are
+              there while REPLAYD is behind whatever you are playing, which is
+              most of the time.</li>
+          <li>The tray icon comes back on its own if Windows Explorer restarts.
+              It used to go for good, which looks exactly like REPLAYD having
+              quit while it is in fact still running and still recording, with
+              no way left to reach it.</li>
+          <li>Windows calls both halves of REPLAYD by their right names now.
+              The window is REPLAYD and the background half is REPLAYD Service,
+              in Task Manager and anywhere else Windows names them.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.26">
         <h3>0.9.26</h3>
         <p class="when">3 September 2026</p>
