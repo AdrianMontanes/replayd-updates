@@ -43,7 +43,7 @@
       <a href="/pricing">Pricing</a>
       <a href="/changelog">Changelog</a>
     </nav>
-    <a class="btn small" href="/releases/REPLAYD-0.9.25-setup.exe">
+    <a class="btn small" href="/releases/REPLAYD-0.9.26-setup.exe">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M0 3.45 9.75 2.1v9.45H0zm10.95-1.5L24 0v11.55H10.95zM0 12.45h9.75v9.45L0 20.55zm10.95 0H24V24l-13.05-1.8z"/></svg>
       Download
     </a>
@@ -97,6 +97,39 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.26">
+        <h3>0.9.26</h3>
+        <p class="when">3 September 2026</p>
+        <ul>
+          <li>A browser at full screen is no longer mistaken for a game. It was
+              recorded in place of one, and worse, it kept hold of the entry, so
+              the game opened afterwards never took over.</li>
+          <li>Neither is a maximised window. If you play windowed and maximised
+              there is now a setting for it under Recording, General: never, on
+              the main monitor, or on any monitor.</li>
+          <li>A game is picked up as it opens rather than when you first click
+              on it, and in about a second instead of up to twenty.</li>
+          <li>Alt+M marks the moment. The recording being made keeps the mark,
+              and so does a replay saved afterwards that still reaches back far
+              enough to contain it. Players show them as chapters.</li>
+          <li>The library works the way a folder window does: cut, copy, paste,
+              rename, and dragging files out to anywhere else. Both listings
+              also keep up with the folder now, so a file moved or deleted
+              somewhere else stops being listed here without you having to
+              leave the page and come back.</li>
+          <li>Automatic bitrate is lower, H.264 most of all. It could reach
+              120 Mbps on the codec whose files are already the largest, and on
+              the machines least likely to have room for them.</li>
+          <li>The window fits on a smaller screen, and Home no longer has a
+              scrollbar at its smallest. Quick Settings fills whatever width it
+              is given rather than stopping at two rows.</li>
+          <li>The game list reads better on a narrow window. The Match by
+              column is only as wide as its longest choice, and the three
+              buttons on each row are icons.</li>
+          <li>Checking for an update answers the first press.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.25">
         <h3>0.9.25</h3>
         <p class="when">3 September 2026</p>
