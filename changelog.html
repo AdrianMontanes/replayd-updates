@@ -43,7 +43,7 @@
       <a href="/pricing">Pricing</a>
       <a href="/changelog">Changelog</a>
     </nav>
-    <a class="btn small" href="/releases/REPLAYD-0.9.29-setup.exe">
+    <a class="btn small" href="/releases/REPLAYD-0.9.30-setup.exe">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M0 3.45 9.75 2.1v9.45H0zm10.95-1.5L24 0v11.55H10.95zM0 12.45h9.75v9.45L0 20.55zm10.95 0H24V24l-13.05-1.8z"/></svg>
       Download
     </a>
@@ -97,6 +97,24 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.30">
+        <h3>0.9.30</h3>
+        <p class="when">5 September 2026</p>
+        <ul>
+          <li>A short welcome tour on the first open: the game list, the
+              hotkeys, the audio and the free trial, each one live so it can
+              be set up right there. It is under Settings, General, to see
+              again.</li>
+          <li>The audio recorded can come from a chosen output device, not
+              only the one Windows is playing to.</li>
+          <li>When a license or trial runs out, a card says so and what to
+              do. A running trial no longer offers to buy, and a subscription
+              can move its key to another device from its own row.</li>
+          <li>Text is drawn lighter and sits centred in every field and
+              button, and every button is the same design.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.29">
         <h3>0.9.29</h3>
         <p class="when">4 September 2026</p>
@@ -206,32 +224,6 @@
               column is only as wide as its longest choice, and the three
               buttons on each row are icons.</li>
           <li>Checking for an update answers the first press.</li>
-        </ul>
-      </div>
-
-      <div class="release" id="0.9.25">
-        <h3>0.9.25</h3>
-        <p class="when">3 September 2026</p>
-        <ul>
-          <li>Recording is smoother. The encoder was made to wait for each
-              frame before the next one could be captured, which on a card with
-              less headroom than the machine this was found on is where dropped
-              frames come from.</li>
-          <li>Saving a replay no longer needs a second copy of it in memory. A
-              five minute buffer at 4K was asking for gigabytes at the moment
-              you pressed save, on a machine already running a game.</li>
-          <li>Notifications no longer cost you frames while you play. Anything
-              drawn over a full screen game takes it out of direct presentation
-              for as long as it is on screen, and a Windows notification costs
-              exactly the same, so while the game being recorded is in front
-              you now get the sound alone. There is a setting if you would
-              rather see the notification, or hear nothing.</li>
-          <li>The notification sound is its own switch, so you can have one
-              without the other, for all of them or for each kind.</li>
-          <li>A game stays the thing being recorded once you tab away from it.
-              Starting a stopped buffer from the tray or the window used to
-              find nothing, because clicking either of them is what took the
-              focus off the game.</li>
         </ul>
       </div>
     </section>
