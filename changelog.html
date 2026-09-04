@@ -43,7 +43,7 @@
       <a href="/pricing">Pricing</a>
       <a href="/changelog">Changelog</a>
     </nav>
-    <a class="btn small" href="/releases/REPLAYD-0.9.28-setup.exe">
+    <a class="btn small" href="/releases/REPLAYD-0.9.29-setup.exe">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M0 3.45 9.75 2.1v9.45H0zm10.95-1.5L24 0v11.55H10.95zM0 12.45h9.75v9.45L0 20.55zm10.95 0H24V24l-13.05-1.8z"/></svg>
       Download
     </a>
@@ -97,6 +97,38 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.29">
+        <h3>0.9.29</h3>
+        <p class="when">4 September 2026</p>
+        <ul>
+          <li>The window draws its own title bar. The page's name sits in it,
+              the sidebar runs to the top edge, and everything Windows does
+              with a title bar still works: dragging, the double click, the
+              right-click menu and the snap layouts over the maximise button.</li>
+          <li>Nothing opens a separate window any more. Adding a game, an
+              entry's own settings, the options for one run, renaming a file
+              and the warning before resetting all come up as a card over the
+              page, with the page dimmed behind it.</li>
+          <li>Adding a game goes in steps. Pick from what is open, from what
+              Steam, Epic and Riot have installed, by a rule about the
+              window's title, or a display. Whether to record the whole
+              session and any settings of its own are decided before the
+              entry is added, and nothing already on the list is offered
+              twice.</li>
+          <li>Game List is a place of its own in the sidebar, above the
+              library. Rows show the program's icon, the order is explained
+              above them, and Any game is always on the list: it can be
+              switched off but not removed.</li>
+          <li>An entry's settings are under tabs by section, with the session
+              switch first. The microphone can now be chosen per game and per
+              run, and a title rule can be told to mind capitals.</li>
+          <li>Cards and blocks are lifted off the black background to the
+              sidebar's own shade, so they can be seen. The folder a library
+              page lists sits beside its tabs and opens Explorer when pressed.</li>
+          <li>Notifications are drawn in a face Windows can render sharply.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.28">
         <h3>0.9.28</h3>
         <p class="when">4 September 2026</p>
@@ -200,152 +232,6 @@
               Starting a stopped buffer from the tray or the window used to
               find nothing, because clicking either of them is what took the
               focus off the game.</li>
-        </ul>
-      </div>
-
-      <div class="release" id="0.9.24">
-        <h3>0.9.24</h3>
-        <p class="when">3 September 2026</p>
-        <ul>
-          <li>A recording longer than about twenty minutes comes back whole if
-              REPLAYD has to repair it. Past four gigabytes the repair wrote the
-              index in the wrong place and said it had worked, leaving a file
-              that looked finished and would not play.</li>
-          <li>Changing a setting no longer interrupts what is being captured,
-              and saving a replay no longer costs frames from it.</li>
-          <li>A saved replay is either there or it is not. One cut short by a
-              crash, or by closing REPLAYD, used to leave a file among your
-              replays that looked like a clip and would not play. Closing
-              REPLAYD now waits for a save that is still writing.</li>
-          <li>Turning audio on reaches your replays without restarting
-              REPLAYD.</li>
-          <li>"Recording saved" appears when the file is finished rather than
-              when you press stop.</li>
-          <li>Checking for updates works on a per-user install.</li>
-          <li>An imported backup cannot use a profile name to write outside the
-              profiles folder.</li>
-        </ul>
-      </div>
-
-      <div class="release" id="0.9.23">
-        <h3>0.9.23</h3>
-        <p class="when">3 September 2026</p>
-        <ul>
-          <li>A new install starts with the Display entry switched off. Most
-              people install REPLAYD to record games, and that entry matches
-              whenever no game is up -- so left on it fills the replay with a
-              browser, a chat window, work, every time nobody asked. It is
-              still on the list, one tick away, for when you do. Nothing
-              changes for a REPLAYD that is already set up.</li>
-          <li>The game list lines up. The row for Any game had a line of text
-              where every other row has a field, so it was the one thing in
-              that column that did not start where the rest of it does; it now
-              has the field too, with nothing to type in it.</li>
-          <li>Add a program centres what it lists. Window titles run from three
-              characters to a sentence, and ranged along one edge they read as
-              a pile of unrelated things rather than a list to choose from.</li>
-        </ul>
-      </div>
-
-      <div class="release" id="0.9.22">
-        <h3>0.9.22</h3>
-        <p class="when">3 September 2026</p>
-        <ul>
-          <li>Home's buttons are three columns of four: the replay and what it
-              writes, everything you take of what is on screen now, and the
-              game list. Recording and taking a screenshot share a column
-              because they are one idea, each with the folder it writes into
-              under it, and every folder is a button again rather than a link
-              in a smaller voice.</li>
-          <li>The game list is on Home, and it is the list rather than a
-              picture of it. Tick a row to switch that entry on or off, drag
-              one to move it up or down the order that decides which of two
-              matches wins, and press the cross to take one off -- which
-              brings the next one up into its place. Clicking a row opens the
-              full page. It is the answer to "why is nothing being recorded",
-              which used to take a visit to another page to find out and a
-              second one to do anything about.</li>
-          <li>Delete permanently now works from Home. It never deleted the
-              wrong thing -- with no way to put the question it refused to go
-              ahead -- but it refused silently, which looked like nothing
-              happening at all.</li>
-          <li>Dragging the left or top edge of the window no longer slides the
-              whole window sideways once it reaches its smallest size.</li>
-          <li>Changing a setting on Home no longer makes the row of recent
-              files blink. It was being thrown away and read again on every
-              switch, which is work nobody asked for as well as something to
-              look at.</li>
-          <li>Quick settings no longer offers rows from the Hotkeys and
-              Notifications pages. Neither holds anything you change between
-              one session and the next, which is what that block is for.</li>
-          <li>"Held in" is now "Stored in".</li>
-        </ul>
-      </div>
-
-      <div class="release" id="0.9.21">
-        <h3>0.9.21</h3>
-        <p class="when">3 September 2026</p>
-        <ul>
-          <li>More of the window speaks Spanish. What was missing was the part
-              nothing was checking: the explanations under the settings, the
-              orange notes beside a row that cannot do what it says, the
-              tooltips, both file dialogs and the buttons on the per-game and
-              per-session panels. The check now reads the settings catalogue
-              itself rather than the source, so a description with no
-              translation can no longer look exactly like one that has a
-              good one.</li>
-          <li>The recording time in the corner of the sidebar no longer runs
-              into the word beside it. Past an hour the two overlapped; the
-              figure now takes the room it needs and the word takes the rest.
-              The size beside it is quoted to one decimal rather than two,
-              which is a digit nobody was reading on a number that changes
-              every second.</li>
-        </ul>
-      </div>
-
-      <div class="release" id="0.9.20">
-        <h3>0.9.20</h3>
-        <p class="when">3 September 2026</p>
-        <ul>
-          <li>The window moves. Scrolling glides the same distance instead of
-              jumping it, pages rise into place as they open, sidebar rows
-              light rather than switch, and library thumbnails fade in as
-              Windows produces them. One switch turns all of it off, on
-              Application - General under Appearance, and off means no
-              animation rather than a quick one.</li>
-          <li>A game can set its own replay length. Fifteen seconds of a
-              shooter and three minutes of a strategy game are different
-              answers, and now they can be different settings: replay length,
-              clip length, memory, HDR and bit depth all sit beside the codec
-              and bitrate an entry could already carry. The tray menu, the
-              hotkey and Home's buttons follow whichever game is being
-              captured, so they offer to save what they would actually
-              write.</li>
-          <li>Two of the per-game settings were wrong. Ticking Maximum bitrate
-              stored one percent of the bitrate rather than the multiplier the
-              row was showing, and rolling it back asked for a hundred and
-              fifty times it. Input device was offered as a number box that
-              could never hold the name of a device, and is gone: which
-              microphone is plugged in is a fact about your desk rather than
-              about a game.</li>
-          <li>Quick settings on Home can be dragged into whatever order you
-              want them. Pick a tile up anywhere except the control it holds,
-              and the rest step aside as it passes.</li>
-          <li>Notifications and the tray menu speak Spanish as well. Everything
-              REPLAYD says is translated now, rather than only what the window
-              says.</li>
-          <li>The sidebar reports the bitrate actually being written rather
-              than the one that was asked for, so constant quality and
-              variable bitrate no longer read as the same number.</li>
-          <li>Updating in place refreshes the Start menu and taskbar icons
-              instead of leaving the old ones there until Windows next rebuilds
-              its icon cache.</li>
-          <li>The notification card is drawn a weight lighter, which reads
-              better at the size it appears at.</li>
-          <li>The typeface setting is off the Appearance page. It was a bench
-              for trying faces on while the window was being designed, and that
-              work is done; config.ini still carries it for anyone who wants a
-              different one.</li>
         </ul>
       </div>
     </section>
