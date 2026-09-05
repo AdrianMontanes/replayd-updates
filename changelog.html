@@ -43,7 +43,7 @@
       <a href="/pricing">Pricing</a>
       <a href="/changelog">Changelog</a>
     </nav>
-    <a class="btn small" href="/releases/REPLAYD-0.9.31-setup.exe">
+    <a class="btn small" href="/releases/REPLAYD-0.9.32-setup.exe">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M0 3.45 9.75 2.1v9.45H0zm10.95-1.5L24 0v11.55H10.95zM0 12.45h9.75v9.45L0 20.55zm10.95 0H24V24l-13.05-1.8z"/></svg>
       Download
     </a>
@@ -97,6 +97,33 @@
              build/bin/Release/test_update.exe https://replayd.download/updates/manifest.json 0.0.0
            It prints the notes it managed to read. An empty list is the failure
            this comment exists to prevent. -->
+      <div class="release" id="0.9.32">
+        <h3>0.9.32</h3>
+        <p class="when">5 September 2026</p>
+        <ul>
+          <li>Each game's replays, recordings and screenshots go in a folder
+              of their own, with your display's under Monitor. On by default,
+              under Recording, General, and on the welcome tour. The library
+              opens these folders, with a way back up and the mouse's side
+              buttons.</li>
+          <li>The library has a star on every file, a Favourites tab, a search
+              box, and a line under each tile with the resolution, frame rate
+              and length. Escape lets go of what is picked.</li>
+          <li>The tray menu is drawn by REPLAYD, in the window's own colours
+              and face, and resting the pointer on the tray icon shows what
+              REPLAYD is doing. The notification card has a cross to dismiss
+              it, and its words are drawn sharply.</li>
+          <li>Home's recent files are a card like the other two, listing every
+              kind together. A setting's explanation is under a small mark
+              beside its name rather than written out on the page, and the
+              middle mouse button scrolls any page.</li>
+          <li>The Stream Deck offer is a card, the odd jobs share one row
+              under General, and "with options" is "with custom settings"
+              with only the settings that apply to that run. The audio meters
+              have a setting: Auto, Smooth or Performance.</li>
+        </ul>
+      </div>
+
       <div class="release" id="0.9.31">
         <h3>0.9.31</h3>
         <p class="when">5 September 2026</p>
@@ -189,25 +216,6 @@
               their heading instead of out of the middle of it, and the buttons
               on the window that asks for settings for one run have their
               labels centred.</li>
-        </ul>
-      </div>
-
-      <div class="release" id="0.9.27">
-        <h3>0.9.27</h3>
-        <p class="when">4 September 2026</p>
-        <ul>
-          <li>Hovering REPLAYD on the taskbar gives you five controls under the
-              preview: stop or start the replay buffer, save the replay, save a
-              clip, start or stop a recording, and take a screenshot. They are
-              there while REPLAYD is behind whatever you are playing, which is
-              most of the time.</li>
-          <li>The tray icon comes back on its own if Windows Explorer restarts.
-              It used to go for good, which looks exactly like REPLAYD having
-              quit while it is in fact still running and still recording, with
-              no way left to reach it.</li>
-          <li>Windows calls both halves of REPLAYD by their right names now.
-              The window is REPLAYD and the background half is REPLAYD Service,
-              in Task Manager and anywhere else Windows names them.</li>
         </ul>
       </div>
     </section>
